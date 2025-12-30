@@ -5,6 +5,7 @@ MID-LEVEL APP - WITH BUG FIXES
 
 import streamlit as st
 import pandas as pd
+import numpy as np  # ← ADDED THIS LINE
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
@@ -60,7 +61,7 @@ with st.sidebar:
     
     if st.button("Generate Sample Data", use_container_width=True):
         # Simple sample data
-        np.random.seed(42)
+        np.random.seed(42)  # ← NOW THIS WILL WORK
         data = []
         for i in range(200):
             treatment = 1 if i < 100 else 0
